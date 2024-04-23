@@ -1,0 +1,42 @@
+:root {
+   --primary: rgb(30, 30, 30);
+   --secondary: rgb(49, 158, 109);
+
+   background-color: var(--primary);
+   color: var(--secondary);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   min-height: 100vh;
+   padding: 10px;
+}
+
+button {
+   background-color: var(--primary);
+   color: var(--secondary);
+   outline: none;
+   border-radius: 5px;
+   border: 2px solid var(--secondary);
+   padding: 10px;
+   font-size: 1.1rem;
+   width: fit-content;
+   transition: 0.2s ease-in-out;
+
+   &:hover {
+      cursor: pointer;
+      background-color: var(--secondary);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+   }
+}
+
+hr {
+   border: none;
+   border-bottom: 2px solid var(--primary);
+}
