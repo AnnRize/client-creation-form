@@ -176,7 +176,7 @@ async function submit() {
         <span :class="$style.name">Пол</span>
         <div :class="$style.radioContainer">
           <div :class="$style.radioWrapper">
-            <label for="sexM">None</label>
+            <label for="sexNone">None</label>
             <MyRadioButton
               name="sex"
               id="sexNone"
