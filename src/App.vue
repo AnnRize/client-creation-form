@@ -13,7 +13,7 @@ const initialState = {
   fatherName: "",
   dateOfBirth: "",
   telephone: "7",
-  sex: "",
+  sex: "None",
   clientGroup: [],
   doctor: "Иванов",
   sms: false,
@@ -175,6 +175,16 @@ async function submit() {
       <div :class="$style.dataRow">
         <span :class="$style.name">Пол</span>
         <div :class="$style.radioContainer">
+          <div :class="$style.radioWrapper">
+            <label for="sexM">None</label>
+            <MyRadioButton
+              name="sex"
+              id="sexNone"
+              value="None"
+              v-model="formData.sex"
+            />
+          </div>
+
           <div :class="$style.radioWrapper">
             <label for="sexM">М</label>
             <MyRadioButton
@@ -413,7 +423,7 @@ h2 {
       flex-wrap: wrap;
       gap: 10px;
 
-      :nth-child(2) {
+      > :nth-child(2) {
         flex: 1;
       }
 

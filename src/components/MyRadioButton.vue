@@ -1,5 +1,5 @@
 <script setup>
-const { modelValue, id } = defineProps({
+const { modelValue, id, value } = defineProps({
   modelValue: String | Boolean,
   id: { type: String, required: true },
   name: String,
@@ -12,6 +12,7 @@ const { modelValue, id } = defineProps({
     type="radio"
     :class="$style.input"
     :value="modelValue"
+    :checked="modelValue === value"
     @change="$emit('update:modelValue', $event.target.value)"
     v-bind="$props"
   />
