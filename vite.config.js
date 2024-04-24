@@ -13,4 +13,7 @@ export default defineConfig({
     },
   },
   base: process.env.NODE_ENV === "production" ? "/client-creation-form/" : "/",
+  define: {
+    __VUE_PROD_DEVTOOLS__: `true`,
+  },
 });
