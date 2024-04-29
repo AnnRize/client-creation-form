@@ -1,6 +1,12 @@
+<script>
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup>
-const { modelValue, id, $props } = defineProps({
-  modelValue: String | Boolean,
+const model = defineModel();
+const { id } = defineProps({
   id: { type: String, required: true },
 });
 </script>
@@ -8,10 +14,10 @@ const { modelValue, id, $props } = defineProps({
 <template>
   <input
     type="checkbox"
+    :id="id"
     :class="$style.input"
-    :checked="modelValue"
-    @change="$emit('update:modelValue', $event.target.checked)"
-    v-bind="$props"
+    v-model="model"
+    v-bind="$attrs"
   />
   <label :for="id" />
 </template>

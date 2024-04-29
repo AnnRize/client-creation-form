@@ -149,11 +149,11 @@ async function submit() {
             {{ v$.telephone.$errors[0].$message }}
           </span>
           <MyInput
-            @blur="v$.telephone.$touch()"
             type="tel"
             placeholder="Номер телефона"
             maxLength="11"
-            :value="formData.telephone"
+            @blur="v$.telephone.$touch()"
+            v-model="formData.telephone"
             @keypress="
               (e) => {
                 if (!e.code.includes(`Digit`)) {

@@ -1,16 +1,15 @@
+<script>
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup>
-const { modelValue } = defineProps({
-  modelValue: String | Boolean,
-});
+const model = defineModel();
 </script>
 
 <template>
-  <input
-    :class="$style.input"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-    v-bind="$props"
-  />
+  <input :class="$style.input" v-model="model" v-bind="$attrs" />
 </template>
 
 <style module>
